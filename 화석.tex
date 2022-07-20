@@ -1,0 +1,329 @@
+%	-------------------------------------------------------------------------------
+% 
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%	-------------------------------------------------------------------------------
+
+	\documentclass[12pt, a4paper, oneside]{book}
+%	\documentclass[12pt, a4paper, landscape, oneside]{book}
+
+		% --------------------------------- 페이지 스타일 지정
+		\usepackage{geometry}
+%		\geometry{landscape=true	}
+		\geometry{top 		=10em}
+		\geometry{bottom		=10em}
+		\geometry{left		=8em}
+		\geometry{right		=8em}
+		\geometry{headheight	=4em} % 머리말 설치 높이
+		\geometry{headsep		=2em} % 머리말의 본문과의 띠우기 크기
+		\geometry{footskip		=4em} % 꼬리말의 본문과의 띠우기 크기
+% 		\geometry{showframe}
+	
+%		paperwidth 	= left + width + right (1)
+%		paperheight 	= top + height + bottom (2)
+%		width 		= textwidth (+ marginparsep + marginparwidth) (3)
+%		height 		= textheight (+ headheight + headsep + footskip) (4)
+
+
+
+		%	===================================================================
+		%	package
+		%	===================================================================
+%			\usepackage[hangul]{kotex}				% 한글 사용
+			\usepackage{kotex}						% 한글 사용
+			\usepackage[unicode]{hyperref}			% 한글 하이퍼링크 사용
+			\usepackage{amssymb,amsfonts,amsmath}	% 수학 수식 사용
+
+			\usepackage{scrextend}					% 
+		
+			\usepackage{enumerate}			%
+			\usepackage{enumitem}			%
+			\usepackage{tablists}			%	수학문제의 보기 등을 표현하는데 사용
+										%	tabenum
+
+
+		% ------------------------------ table 
+			\usepackage{longtable}			%
+			\usepackage{tabularx}			%
+			\usepackage{tabu}				%
+
+
+
+		% ------------------------------ 
+			\usepackage{setspace}			%
+			\usepackage{booktabs}			% table
+			\usepackage{color}				%
+			\usepackage{multirow}			%
+			\usepackage{boxedminipage}		% 미니 페이지
+			\usepackage[pdftex]{graphicx}	% 그림 사용
+			\usepackage[final]{pdfpages}	% pdf 사용
+			\usepackage{framed}			% pdf 사용
+			
+			\usepackage{fix-cm}	
+			\usepackage[english]{babel}
+	
+			\usepackage{tikz}%
+			\usetikzlibrary{arrows,positioning,shapes}
+			%\usetikzlibrary{positioning}
+			
+
+		% --------------------------------- 	page
+			\usepackage{afterpage}			% 다음페이지가 나온면 어떻게 하라는 명령 정의 패키지
+%			\usepackage{fullpage}			% 잘못 사용하면 다 흐트러짐 주의해서 사용
+%			\usepackage{pdflscape}			% 
+			\usepackage{lscape}			%	 
+
+
+			\usepackage{blindtext}
+	
+		% --------------------------------- font 사용
+			\usepackage{pifont}				%
+			\usepackage{textcomp}
+			\usepackage{gensymb}
+			\usepackage{marvosym}
+
+
+
+
+		% Package --------------------------------- 
+
+			\usepackage{tablists}				%
+
+
+
+
+		% --------------------------------- 페이지 스타일 지정
+
+		\usepackage[Sonny]		{fncychap}
+
+			\makeatletter
+			\ChNameVar	{\Large\bf}
+			\ChNumVar		{\Huge\bf}
+			\ChTitleVar	{\Large\bf}
+			\ChRuleWidth	{0.5pt}
+			\makeatother
+
+%		\usepackage[Lenny]		{fncychap}
+%		\usepackage[Glenn]		{fncychap}
+%		\usepackage[Conny]		{fncychap}
+%		\usepackage[Rejne]		{fncychap}
+%		\usepackage[Bjarne]	{fncychap}
+%		\usepackage[Bjornstrup]{fncychap}
+
+		\usepackage{fancyhdr}
+		\pagestyle{fancy}
+		\fancyhead{} % clear all fields
+		\fancyhead[LO]{\footnotesize \leftmark}
+		\fancyhead[RE]{\footnotesize \leftmark}
+		\fancyfoot{} % clear all fields
+		\fancyfoot[LE,RO]{\large \thepage}
+		%\fancyfoot[CO,CE]{\empty}
+		\renewcommand{\headrulewidth}{1.0pt}
+		\renewcommand{\footrulewidth}{0.4pt}
+	
+	
+	
+		% --------------------------------- 	section 스타일 지정
+	
+		\usepackage{titlesec}
+		
+		\titleformat*{\section}				{\large\bfseries}
+		\titleformat*{\subsection}				{\normalsize\bfseries}
+		\titleformat*{\subsubsection}			{\normalsize\bfseries}
+		\titleformat*{\paragraph}				{\normalsize\bfseries}
+		\titleformat*{\subparagraph}			{\normalsize\bfseries}
+	
+		\renewcommand{\thesection}			{\arabic{section}.}
+		\renewcommand{\thesubsection}		{\thesection\arabic{subsection}.}
+		\renewcommand{\thesubsubsection}	{\thesubsection\arabic{subsubsection}}
+		
+		\titlespacing*{\section} 			{0pt}{1.0em}{1.0em}
+		\titlespacing*{\subsection}	  		{0ex}{1.0em}{1.0em}
+		\titlespacing*{\subsubsection}		{0ex}{1.0em}{1.0em}
+		\titlespacing*{\paragraph}			{0ex}{1.0em}{1.0em}
+		\titlespacing*{\subparagraph}		{0ex}{1.0em}{1.0em}
+	
+	%	\titlespacing*{\section} 			{0pt}{0.0\baselineskip}{0.0\baselineskip}
+	%	\titlespacing*{\subsection}	  		{0ex}{0.0\baselineskip}{0.0\baselineskip}
+	%	\titlespacing*{\subsubsection}		{6ex}{0.0\baselineskip}{0.0\baselineskip}
+	%	\titlespacing*{\paragraph}			{6pt}{0.0\baselineskip}{0.0\baselineskip}
+	
+
+		% --------------------------------- recommend		섹션별 페이지 상단 여백
+		\newcommand{\SectionMargin}			{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSectionMargin}		{\newpage  \null \vskip 2cm}
+		\newcommand{\SubSubSectionMargin}	{\newpage  \null \vskip 2cm}
+
+
+	
+		% --------------------------------- 장의 목차
+		\usepackage{minitoc}
+		\setcounter{minitocdepth}{1}    	% Show until subsubsections in minitoc
+		\setlength{\mtcindent}{12pt} 		% default 24pt
+	
+	
+		% --------------------------------- 	문서 기본 사항 설정
+		\setcounter{secnumdepth}{3} 		% 문단 번호 깊이
+		\setcounter{tocdepth}{3} 			% 문단 번호 깊이
+		\setlength{\parindent}{0cm} 		% 문서 들여 쓰기를 하지 않는다.
+		
+		
+		% --------------------------------- 	줄간격 설정
+		\doublespace
+%		\onehalfspace
+%		\singlespace
+		
+		
+% 	============================================================================== List global setting
+%		\setlist{itemsep=1.0em}
+	
+% 	============================================================================== enumi setting
+
+%		\renewcommand{\labelenumi}{\arabic{enumi}.} 
+%		\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+%		\renewcommand{\labelenumii}{(\arabic{enumii})}
+%		\renewcommand{\labelenumiii}{\arabic{enumiii})}
+
+
+	%	-------------------------------------------------------------------------------
+	%		Vertical and Horizontal spacing
+	%	-------------------------------------------------------------------------------
+		\setlist[enumerate,1]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate,2]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate,3]	{ leftmargin=8.0em, rightmargin=0.0em, labelwidth=0.0em, labelsep=0.0em }
+		\setlist[enumerate]	{ 	itemsep=1.0em, 
+								leftmargin=6.0ex, 
+								rightmargin=0.0em, 
+								labelwidth=0.0em, 
+								labelsep=4.0ex 
+							}
+
+
+	%	-------------------------------------------------------------------------------
+	%		Label
+	%	-------------------------------------------------------------------------------
+%		\setlist[enumerate,1]{ label=\arabic*., ref=\arabic* }
+%		\setlist[enumerate,1]{ label=\emph{\arabic*.}, ref=\emph{\arabic*} }
+%		\setlist[enumerate,1]{ label=\textbf{\arabic*.}, ref=\textbf{\arabic*} }   	% 1.
+%		\setlist[enumerate,1]{ label=\textbf{\arabic*)}, ref=\textbf{\arabic*)} }		% 1)
+		\setlist[enumerate,1]{ label=\textbf{(\arabic*)}, ref=\textbf{(\arabic*)} }	% (1)
+		\setlist[enumerate,2]{ label=\textbf{\arabic*)}, ref=\textbf{\arabic*)} }		% 1)
+		\setlist[enumerate,3]{ label=\textbf{\arabic*.}, ref=\textbf{\arabic*.} }		% 1.
+
+%		\setlist[enumerate,2]{ label=\emph{\alph*}),ref=\theenumi.\emph{\alph*} }
+%		\setlist[enumerate,3]{ label=\roman*), ref=\theenumii.\roman* }
+
+
+	
+			
+			
+
+% ------------------------------------------------------------------------------
+% Begin document (Content goes below)
+% ------------------------------------------------------------------------------
+	\begin{document}
+	
+			\dominitoc
+			
+
+			\title{화석}
+			\author{김대희}
+			\date{2017년 5월}
+			\maketitle
+
+
+			\tableofcontents
+%			\listoffigures
+%			\listoftables
+
+
+
+
+	\clearpage
+% =================================================================================================== Part
+	\addtocontents{toc}{\protect\newpage}
+	\part{화석 일반}
+
+
+
+
+	\clearpage
+% ================================================= chapter 	====================
+	\chapter{화석이란 무엇인가?}
+
+
+
+
+	\clearpage
+	% ------------------------------------------ section ------------ 
+	\section{규화목}
+
+
+		나무가 퇴적물 속에 묻힌 뒤 오랜 시간 동안 주변에 지하수가 흐르게 되면 
+		나무의 유기질 성분은 서서히 분해되고 그 자리에 지하수에 포함되어 있는 규산 성분이 들어가게 된다.
+
+		오랫동안 이런 일이 계속되면 결국 나무 자체는 사라지고 원래 나무와 똑같은 모양의 규산질 나무 화석이 남게 된다. 
+		이런 화석을 규화목이라고 한다.
+
+		또 이런 현상을 나무의 유기질 성분과 규산 성분이 서로 뒤바뀌었다고 해서 치환 되었다고 한다.
+
+
+
+
+
+	\clearpage
+	% ------------------------------------------ section ------------ 
+	\section{표준화석}
+
+			\begin{itemize}[	topsep=0.0em, itemsep=0.0em, leftmargin=4em, labelsep=3em ] 
+			\item	일정기간동안만 살아야 한다.
+			\item	넓은 지역에 분포하며 살았던 생물
+			\end{itemize}	
+
+
+			\begin{itemize}[	topsep=0.0em, itemsep=0.0em, leftmargin=4em, labelsep=3em ] 
+			\item	고생대 : 삼엽충
+			\item	중생대 : 공룡
+			\item	신생대 : 매머드
+			\end{itemize}	
+
+
+	\clearpage
+	% ------------------------------------------ section ------------ 
+	\section{시상 화석}
+	
+		
+
+	\clearpage
+	% ------------------------------------------ section ------------ 
+	\section{동일 과정의 원리 (허턴)}
+
+
+	\clearpage
+	% ------------------------------------------ section ------------ 
+	\section{공룡 발자국}
+
+
+			\begin{itemize}[	topsep=0.0em, itemsep=0.0em, leftmargin=4em, labelsep=3em ] 
+			\item	용각류
+			\item	조각류
+			\item	수각류
+			\end{itemize}	
+
+
+
+
+
+% ------------------------------------------------------------------------------
+% End document
+% ------------------------------------------------------------------------------
+\end{document}
+
+
